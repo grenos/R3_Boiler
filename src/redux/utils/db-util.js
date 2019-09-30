@@ -1,11 +1,13 @@
 import axios from 'axios'
 import store from '../store'
 const Realm = require('realm');
-
+import { CarSchema } from '../utils/DB-schemas'
 
 
 // this needs to be re-written so it can be re-used for api calls
 // or even without them, more methods to call for more use-cases
+
+//? https://realm.io/docs/javascript/latest/api/Realm.html#~Configuration
 
 export class dbObjectUtil {
 
@@ -15,10 +17,20 @@ export class dbObjectUtil {
     return new Promise((resolve, reject) => {
       try {
         let modifiedDbObjects = []
-        Realm.write(() => {
+        realm.write(() => {
           // Do some database transactions
           // add modified objects to modifiedDbObjects
+          //* crete an object
+          // realm.create('Car', { make: 'Honda', model: 'Accord', drive: 'awd' })
+          //* update an abject 
+          // car.miles = 1100;
 
+          //* Delete the book
+          // realm.delete(book);
+          //* Delete multiple books by passing in a `Results`, `List`,
+          //* or JavaScript `Array`
+          // let allBooks = realm.objects('Book');
+          // realm.delete(allBooks); // Deletes all books
         })
         resolve(modifiedDbObjects)
       } catch (e) {
