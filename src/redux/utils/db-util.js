@@ -5,7 +5,7 @@ const Realm = require('realm');
 
 
 // this needs to be re-written so it can be re-used for api calls
-// or even without them
+// or even without them, more methods to call for more use-cases
 
 export class dbObjectUtil {
 
